@@ -166,7 +166,7 @@ module.exports = {
             resp = menus.bankTransfers.getSuccess(accountName);
           } else if(code == "1100"){
             // pending
-            resp = menus.bankTransfers.getPENDING();
+            resp = menus.bankTransfers.getPENDING;
           } else {
             // failed
             resp = menus.bankTransfers.getFailed;
