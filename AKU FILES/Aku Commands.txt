@@ -1,0 +1,176 @@
+SoloistN1
+
+Rebuild instructions
+
+Command number 1: sudo su -
+
+Platform:
+
+cd /home/kwaramba/
+rm -Rf /aku
+git clone --branch lean https://github.com/TatendaKwaramba/aku.git
+cd /akuhome
+rm -Rf web/build/web-bkp/
+cp -Rf /home/kwaramba/aku/ web/build/web-bkp
+docker-compose build web
+docker-compose up -d web
+
+docker logs -f --tail 10 node1
+
+
+ mv myfile /tmp
+git push aku lean
+
+
+
+Business:
+
+rm -Rf web/build/web-bus-bkp/
+cp -Rf /home/kwaramba/business/ web/build/web-bus-bkp
+docker-compose build web
+docker-compose up -d web
+
+php -d memory_limit=-1 /usr/local/bin/composer install
+
+2340100000002
+2341236789856
+0000000000
+
+ docker pull cap10/myrepository:ussd-agent
+
+Patiti
+2895
+
+Subs
+2348059090642
+1111
+
+2349137489114
+1515
+
+Wema Bank 0241949876
+2347065912538
+
+2348059090645
+0000
+
+2348057070941
+2060
+24784
+
+3739 
+
+CLIENT 2349152018739========> 1683|
+
+07065912538
+2806
+
+08111848363
+
+0078023605 - Patiti Consulting (Sterling Bank)
+Destination Bank Code Is Not Valid
+
+PATITI CONSULTING LTD, 
+Account number: 0085444675  Access/Diamond Bank PLC.
+
+username: 'akupay'
+  password: '&?s]8WBs=n'
+
+AGENT_WALLET_TO_BANK_PREAUTH,
+    AGENT_WALLET_TO_BANK_TRANSACTION,
+    AGENT_TO_AGENT_SENDMONEY_PREAUTH,
+    AGENT_TO_AGENT_SENDMONEY_TRANSACTION,
+
+
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fil="http://tempuri.org/GAPS_Uploader/FileUploader">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fil:GetAccountInOtherBank>
+         <!--Optional:-->
+         <fil:xmlString><![CDATA[<GetAccountInOtherBank>
+			<customerid>292111882STP</customerid>
+			<username>patrick@aku.technology</username>
+			<password>Jhank!3@2020</password>
+			<accountnumber>0085444675</accountnumber>
+            <Bankcode>063</Bankcode>
+            <hash>13c798708c184ff91aae7e81de3262b49556a9641a5e7340a7c81bc39eb13b8237d2d3e55492ae99b540e602b98792194461726b9d860efddb78f45399ea66dc</hash>
+</GetAccountInOtherBank>]]></fil:xmlString>
+      </fil:GetAccountInOtherBank>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+Due dates for assignments
+Ass 1: 08/12/2020
+Ass 2: 15/12/2020
+Ass 3: 22/12/2020
+
+SOS API WEBHOOKURL: https://dev-sos-api.akuproducts.com/api/v1/services/webhook
+
+Payload for Beneficiary
+{
+    "type": "beneficiary",
+    "phone_number": "07035038924",
+    "first_name": "Tosin",
+    "last_name": "Akomolafe",
+    "amount_credited": 20000,
+    "date_of_transaction": "2020-01-10 01:22:12",
+    "account_number": "0108968775",
+    "bank_name": "GTBank",
+    "bank_code": "044",
+    "status": "credited"
+}
+
+Payload for USSD
+{
+    "type": "ussd",
+    "phone_number": "07035038924",
+    "service_code": "*345*736#",
+    "duration": "34",
+    "transaction_date": "2020-01-10 01:22:12",
+    "status": "success"
+}
+
+Payload for SMS
+{
+    "type": "sms",
+    "phone_number": "07035038924",
+    "sms_content": "*345*736#",
+    "sms_type": "inbox",
+    "sms_sent_at": "2020-01-10 01:22:12",
+    "status": "success"
+}
+
+    body: [Object: null prototype] {
+        sessionId: 'ATUid_800581e77fc94cf1d9ad1893a9124ef3',
+        serviceCode: '*347*215#',
+        date: '2020-12-08T15:28:52.398Z',
+        networkCode: '62130',
+        phoneNumber: '+2348141381267',
+        status: 'Incomplete',
+        cost: 'NGN 21.0000',
+        durationInMillis: '55298 milliseconds',
+        'hopsCount ': '6',
+        'input ': '3*129*1*0085444675*1',
+        lastAppResponse: 'CON Transaction could not be authorized',
+        errorMessage: 'None'
+      }
+
+{
+  sessionId: 'ATUid_800581e77fc94cf1d9ad1893a9124ef3',
+  serviceCode: '*347*215#',
+  date: '2020-12-08T15:28:52.398Z',
+  networkCode: '62130',
+  phoneNumber: '+2348141381264',
+  status: 'Incomplete',
+  cost: 'NGN 21.0000',
+  durationInMillis: '55298 milliseconds',
+  'hopsCount ': '6',
+  'input ': '3*129*1*0085444675*1',
+  lastAppResponse: 'CON Transaction ',
+  errorMessage: 'None'
+}
+
+'"date_of_transaction" with value "2020-11-12 06:3:22" fails to match the required pattern: /[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]/. "account_number" length must be at least 10 characters long. "bank_code" length must be less than or equal to 3 characters long',
+
+

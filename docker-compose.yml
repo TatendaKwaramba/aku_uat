@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ussd-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cap10/myrepository:ussd-agent
+    container_name: ussd-agent
+    ports:
+      - '4000:4000'
+    restart: unless-stopped
+    network_mode: host

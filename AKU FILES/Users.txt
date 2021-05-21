@@ -1,0 +1,90 @@
+subscriber 2348059090613 pin 0000
+subscriber 2348059090647 pin 7217
+
+operator 2348059090611 code 1234
+agent 263782236268
+
+Change ip link address
+Wait for error codes
+
+[14:25, 3/3/2021] Cap10: ssh -p 9301 andy@144.91.106.206
+[14:45, 3/3/2021] Cap10: 192.168.1.198
+
+Account 0085444675  Access
+
+
+"id": 9,
+"mobile": "2348059090647",
+
+subscriber
+  "id": 93808,
+  "mobile": "2348059090649",
+
+{
+  "id": 93829,
+  "mobile": "2348059090610",
+  "email": "three@this.com",
+  "firstname": "Three",
+  "lastname": "Three",
+  "idNumber": "2348059090643",
+  "registrationDate": "2021-02-12",
+  "subscriberProfile": "Gold",
+  "agentName": null,
+  "status": "ACTIVE"
+}
+
+Operator
+{
+  "id": 51,
+  "firstname": "Tatenda",
+  "lastname": "Kwaramba",
+  "email": "tatenda@this.com",
+  "mobile": "2348059090611",
+  "status": "ACTIVE",
+  "agent": "Tatenda",
+  "agentId": 21
+}
+
+Device
+{
+  "id": 15,
+  "imei": "2348059090610",
+  "type": "USSD",
+  "status": "ACTIVE",
+  "agent": "Tatenda"
+}
+
+Operator
+{
+  "id": 4,
+  "firstname": "Tatenda",
+  "lastname": "Operator",
+  "email": "tatenda@operator.com",
+  "mobile": "2348059090611",
+  "status": "ACTIVE",
+  "agent": "Tatenda",
+  "agentId": 5
+}
+
+Agent
+{
+  "id": 5,
+  "mobile": "2348059090648",
+  "address": "2348059090648",
+  "email": "this@this.com",
+  "bvn": "2348059090648",
+  "governmentId": "1",
+  "lga": "string",
+  "localState": "string",
+  "businessName": "Tatenda",
+  "numberOfEmployees": 5,
+  "numberOfOutlets": 5,
+  "proofOfResidence": null,
+  "profilePicture": "string",
+  "status": "ACTIVE",
+  "registrationDate": null,
+  "contactPersonCreateDto": null,
+  "administratorCreateDto": null,
+  "accountCreateDto": null,
+  "agentProfileId": 1
+}
