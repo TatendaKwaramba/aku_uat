@@ -65,7 +65,7 @@ module.exports = {
         getSuccess: "END Cashout Transaction is being processed you will receive a message shortly\n\n# Main Menu",
         getWrongCode: "CON Incorrect agent code please try again\n# Main Menu",
         getFailed: "CON Cashout Failed. Please try again sometime\n# Main Menu",
-        getUnknownSubscriber: "END Subscriber is not registered",
+        getUnknownSubscriber: "END Subscriber is not registered/ Incorrect pin",
     },
 
     walletTransfer: {

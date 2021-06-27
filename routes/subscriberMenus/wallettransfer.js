@@ -73,10 +73,10 @@ module.exports = {
             return menus.walletTransfer.getCancel;
         },
 
-        stepfive: (text, sessionId) => {
+        stepfive: async (text, sessionId) => {
             let money = text.split("*")[1];
             let phones = text.split("*")[3];
-            //Store the phone number
+
             transaction
               .update(
                 {
@@ -92,12 +92,15 @@ module.exports = {
               .catch((SequelizeDatabaseError) => {
                 console.log("db wallet phone: ", SequelizeDatabaseError);
               });
+
+            // check if user exists
+            let user = await walletTransfers.getUser(phones);
         
-            if (text.split("*")[3] && !isNaN(text.split("*")[3])) {
-              resp = menus.walletTransfer.getConfirm(money, phones);
+            if (text.split("*")[3] && !isNaN(text.split("*")[3]) && user.isUser) {
+              resp = menus.walletTransfer.getConfirm(money, phones, user.firstname, user.lastname);
               
             } else {
-              resp = menus.invalidInput.getInvalidInput;
+              resp = menus.walletTransfer.invalidInput;
               console.log(resp);
             }
             

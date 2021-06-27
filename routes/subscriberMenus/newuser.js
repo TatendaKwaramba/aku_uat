@@ -16,17 +16,8 @@ module.exports = {
               return resp;
         },
 
-        stepthree: (text) => {
-          if (!text.split("*")[1]) {
-              resp = menus.invalidInput.getInvalidInput;
-            } else {
-              resp = menus.newUserMenu.getId;
-            }
-            return resp;
-        },
-
         stepfour: (text) => {
-          if (!text.split("*")[2]) {
+          if (!text.split("*")[1]) {
               resp = menus.invalidInput.getInvalidInput;
             } else {
               resp = menus.newUserMenu.getEmail;
@@ -36,7 +27,7 @@ module.exports = {
 
         stepfive: async (text, mobile, agentId) => {
 
-          if (!text.split("*")[3]) {
+          if (!text.split("*")[2]) {
             resp = menus.invalidInput.getInvalidInput;
           } else {
             let firstName = text.split("*")[0];

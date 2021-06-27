@@ -65,7 +65,6 @@ router.post("/", async (req, res) => {
     // Check If user exists
     if(text == ""){
       var isSubscriberRegistered = await registration.isRegistered(user);
-      // isSubscriberRegistered = true;
       console.log(isSubscriberRegistered);
     }
   
@@ -82,7 +81,6 @@ router.post("/", async (req, res) => {
     response = await subscriberMenuLogic.subscriberMenu.stepone();
   } 
   else if (text == "8") {
-    console.log('hey I am running');
     response = await subscriberMenuLogic.subscriberMenu.steptwo();
   } 
   
@@ -102,18 +100,11 @@ router.post("/", async (req, res) => {
     text.split("*").length == "2" &&
     level == "lastName"
   ) {
-    level = "idNumber";
-    response = await newUserLogic.newuserMenu.stepthree(text);
-  } else if (
-    !isSubscriberRegistered &&
-    text.split("*").length == "3" &&
-    level == "idNumber"
-  ) {
     level = "email";
     response = await newUserLogic.newuserMenu.stepfour(text);
   } else if (
     !isSubscriberRegistered &&
-    text.split("*").length == "4" &&
+    text.split("*").length == "3" &&
     level == "email"
   ) {
     response = await newUserLogic.newuserMenu.stepfive(text, user, agentId);

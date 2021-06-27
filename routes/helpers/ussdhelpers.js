@@ -297,6 +297,37 @@ module.exports = {
       }
       return info;
     },
+
+    getUser: async (mobile) => {
+      let subscriberMobile = `${process.env.SERVICE_SUBSCRIBER}/api/v1/subscriber-mobile/${mobile}`;
+      let flag = false;
+      let user = {
+        "isUser": false,
+        "firstname": "",
+        "lastname": ""
+      }
+      try {
+        await axios
+          .get(subscriberMobile)
+          .then((res) => {
+            let {data} = res;
+            if (data.status == "ACTIVE") {
+              console.log("Subscriber: ", data);
+              user.isUser = true;
+              user.firstname = data.firstname;
+              user.lastname = data.lastname;
+            } else {
+              console.log("False: ", res);
+            }
+          })
+          .catch(function (error) {
+            console.log("isRegistered?:", error);
+          });
+          return user;
+      } catch (error) {
+        console.log(error);
+      }
+    },
   },
 
   walletToBank: {

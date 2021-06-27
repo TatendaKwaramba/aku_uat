@@ -145,7 +145,7 @@ module.exports = {
           console.log(walletTransferFlag);
           if (walletTransferFlag.flag) {
             resp = menus.walletTransfer.getSuccess;
-          } else if(walletTransferFlag.statusCode == 400){
+          } else if(walletTransferFlag.statusCode == 500){
             // agent does not exist
             resp = menus.walletTransfer.getAgentNull;
           } else if(walletTransferFlag.statusCode == 404){

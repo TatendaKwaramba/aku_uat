@@ -144,7 +144,7 @@ const { walletToBank } = require("../helpers/ussdhelpers");
 
         if(responseCode == "1000"){
           // run wallet to bank
-          let details = await walletToBank.agentWalletToBank(agentId, bankSortCode, parseInt(bankAmount), operatorId, operatorCode);
+          let details = await walletToBank.agentWalletToBank(agentId, bankCode, parseInt(bankAmount), operatorId, operatorCode);
           let akuTransferTransactionReference = details.transactionId;
           let walletToBankFlag = details.status;
 

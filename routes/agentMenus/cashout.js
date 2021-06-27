@@ -137,14 +137,14 @@ module.exports = {
             // return success
             resp = menus.cashout.getSuccess;
           } else if(agentCashoutFlag.statusCode == 404){
-            // subscriber not found
-            resp = menus.cashout.getUnknownSubscriber;
-          } else if(agentCashoutFlag.statusCode == 500){
-            // incorrect subscriber pin
-            resp = menus.cashout.getWrongPin;
-          } else if(agentCashoutFlag.statusCode == 300){
-            // get wrong code
+            // operator does not exist/ wrong pin
             resp = menus.cashout.getWrongCode;
+          } else if(agentCashoutFlag.statusCode == 500){
+            // incorrect subscriber number/ wrong pin
+            resp = menus.cashout.getUnknownSubscriber;
+          } else if(agentCashoutFlag.statusCode == 300){
+            // get wrong pin
+            resp = menus.cashout.getWrongPin;
           } else {
             // return failed
             resp = menus.cashout.getFailed;

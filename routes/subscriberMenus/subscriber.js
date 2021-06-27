@@ -106,9 +106,10 @@ module.exports = {
         },
         getCell: "CON Enter mobile number you're sending money to.",
         getCancel: "CON Transfer was cancelled\n\n# Main Menu",
-        getConfirm: (money, phones) => {
-            return `CON Confirm you are transferring NGN ${money} to ${phones}\n1. Confirm\n2. Cancel\n## Back\n# Main Menu`;
+        getConfirm: (money, phones, firstname, lastname) => {
+            return `CON Confirm you are transferring NGN ${money} to ${firstname} ${lastname} ${phones}\n1. Confirm\n2. Cancel\n## Back\n# Main Menu`;
         },
+        invalidInput: "Invalid input or number not registered",
         getPin: "CON Enter Pin & Transfer\n\n# Main Menu",
         getSuccess: "CON Transfer Successful!\n\n# Main Menu",
         getWrongPin: "END Incorrect PIN please try again!",
