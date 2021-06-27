@@ -144,34 +144,12 @@ const { walletToBank } = require("../helpers/ussdhelpers");
 
         if(responseCode == "1000"){
           // run wallet to bank
-          let details = await walletToBank.agentWalletToBank(agentId, bankCode, parseInt(bankAmount), operatorId, operatorCode);
-          let akuTransferTransactionReference = details.transactionId;
+          let details = await walletToBank.agentWalletToBank(agentId, bankCode, bankAccount, parseInt(bankAmount), operatorId, operatorCode);
           let walletToBankFlag = details.status;
 
           // if success then gtTransfer
           if(walletToBankFlag){
-            // run the gtTransfer
-            var {code} = await gtBank.gtTransfer(
-              bankName,
-              bankCode,
-              bankSortCode,
-              bankAccount,
-              bankAmount,
-              akuTransferTransactionReference,
-              akuTransferTransactionReference,
-              phoneNumber
-            );
-            // return success to the user
-            if(code == "1000"){
-              // success
-              resp = menus.bankTransfers.getSuccess(accountName);
-            } else if(code == "1100"){
-              // pending
-              resp = menus.bankTransfers.getPENDING;
-            } else {
-              // failed
-              resp = menus.bankTransfers.getFailed;
-            }
+            resp = menus.bankTransfers.getSuccess(accountName);
           } else if(details.statusCode = 404){
             // wrong pin
             resp = menus.bankTransfers.getWrongPin;

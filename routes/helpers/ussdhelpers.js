@@ -406,12 +406,13 @@ module.exports = {
       return flag;
     },
 
-    agentWalletToBank: async (agentId, bankId, amount, operatorId, operatorCode) => {
+    agentWalletToBank: async (agentId, bankId, bankAccount, amount, operatorId, operatorCode) => {
       let url = 'http://api-akupay.jugaad.co.zw:8105/api/v1/transactions/agent-wallet-to-bank';
       let details = {};
       let data = {
         agentId,
         bankId,
+        bankAccount,
         amount,
         operatorId,
         operatorCode,
